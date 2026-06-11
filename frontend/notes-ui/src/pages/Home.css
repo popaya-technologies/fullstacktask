@@ -1,0 +1,90 @@
+/* Layout Container */
+.home-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+header h1 { margin: 0; }
+
+/* Search & Buttons */
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover { background-color: #0056b3; }
+
+/* Notes Grid (Responsive) */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.note-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: #fff;
+    position: relative;
+    min-height: 150px;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.note-card.pinned {
+    border-left: 5px solid #ffc107;
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #ff4d4d;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.delete-btn:hover { background-color: #cc0000; }
+
+/* Status States */
+.status {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.error { color: #d9534f; }
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    header { flex-direction: column; gap: 15px; }
+    input[type="text"] { width: 100%; }
+}
