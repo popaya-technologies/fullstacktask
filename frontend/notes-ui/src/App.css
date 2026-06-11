@@ -1,0 +1,384 @@
+/* ===== App Layout ===== */
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 1.5rem;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: #fff;
+}
+
+.btn-back {
+  background: none;
+  color: #4f46e5;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== Search Bar ===== */
+.search-bar {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #4f46e5;
+}
+
+.search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #999;
+  cursor: pointer;
+}
+
+/* ===== Notes List ===== */
+.notes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ===== Note Card ===== */
+.note-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition:
+    box-shadow 0.2s,
+    transform 0.15s;
+}
+
+.note-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.note-card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.note-card-preview {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.note-card-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* ===== Empty / Loading / Error States ===== */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #4f46e5;
+  font-size: 1rem;
+}
+
+.error-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.error-banner button {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ===== Note Detail ===== */
+.note-detail {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.note-detail-content {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.note-detail-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.note-detail-dates {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+}
+
+.note-detail-body {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.note-detail-body p {
+  margin: 0;
+}
+
+.note-detail-empty {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.note-detail-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ===== Note Form (Overlay) ===== */
+.note-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 1rem;
+}
+
+.note-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.note-form h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.3rem;
+  color: #1f2937;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.35rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #4f46e5;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* ===== Confirm Dialog (Overlay) ===== */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  padding: 1rem;
+}
+
+.confirm-dialog {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.confirm-dialog p {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+}
+
+.pagination-info {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.pagination .btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .app {
+    padding: 0.75rem;
+  }
+
+  .app-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .app-header .btn {
+    width: 100%;
+  }
+
+  .notes-list {
+    grid-template-columns: 1fr;
+  }
+
+  .note-form {
+    padding: 1.5rem;
+  }
+
+  .note-detail-dates {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
