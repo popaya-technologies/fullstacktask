@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+dist/
+.env/
+
+# Production Environment Keys (Protects your MySQL passwords)
+backend/notes-api/.env
+
+# Local system configuration variables
+.DS_Store
+Thumbs.db
